@@ -1,0 +1,10 @@
+{
+  "name": "basic",
+  "private": true,
+  "scripts": {
+    "dev": "yapapa dev"
+  },
+  "dependencies": {
+    "yapapa": "workspace:*"
+  }
+}

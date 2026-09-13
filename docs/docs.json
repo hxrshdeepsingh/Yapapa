@@ -1,0 +1,19 @@
+{
+    "$schema": "https://mintlify.com/docs.json",
+    "theme": "maple",
+    "name": "Yapapa",
+    "logo": "/assets/icon.png",
+    "favicon": "/assets/favicon.ico",
+    "navigation": {
+        "groups": [
+            {
+                "group": "Documentation",
+                "pages": [
+                    "index",
+                    "getting-started.mdx",
+                    "quickstart.mdx"
+                ]
+            }
+        ]
+    }
+}

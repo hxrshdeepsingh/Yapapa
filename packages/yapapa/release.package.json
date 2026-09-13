@@ -1,0 +1,29 @@
+{
+    "name": "yapapa",
+    "version": "0.1.0",
+    "type": "module",
+    "bin": {
+        "yapapa": "dist/cli/index.js"
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "prepublishOnly": "pnpm build"
+    },
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "alpinejs": "^3.17.0",
+        "htmx.org": "^2.0.10",
+        "path-to-regexp": "^8.4.2",
+        "tinyglobby": "^0.2.17"
+    },
+    "devDependencies": {
+        "@types/bun": "^1.4.0",
+        "@types/node": "^22.20.2",
+        "typescript": "^7.0.2"
+    }
+}
