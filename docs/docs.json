@@ -3,7 +3,9 @@
     "theme": "maple",
     "name": "Yapapa",
     "colors": {
-        "primary": "#ea580c"
+        "primary": "#ea580c",
+        "light": "#ea580c",
+        "dark": "#ea580c"
     },
     "logo": "/assets/icon.png",
     "favicon": "/assets/favicon.ico",
