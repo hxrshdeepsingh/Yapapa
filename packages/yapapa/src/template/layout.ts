@@ -1,4 +1,4 @@
-import { runtime } from "../server";
+import { runtime } from "../cli/dev/server";
 
 export async function layoutWrapper(html: string) {
     const layout = await runtime.readFile("./src/pages/layout.html");

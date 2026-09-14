@@ -1,6 +1,7 @@
 export interface Runtime {
     name: string;
 
+    cwd(): string;
     readFile(path: string): Promise<string>;
     writeFile(path: string, data: string): Promise<void>;
     exists(path: string): Promise<boolean>;

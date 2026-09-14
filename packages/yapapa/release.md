@@ -51,6 +51,9 @@ Do not manually edit files inside `dist/`.
 Create the npm package:
 
 ```bash
+pnpm pack --dry-run
+```
+```bash
 pnpm pack
 ```
 

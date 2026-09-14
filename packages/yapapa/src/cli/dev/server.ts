@@ -1,21 +1,6 @@
-import { renderYapapaFile } from "./render/render.js";
-import { layoutWrapper } from "./template/layout.js";
-import { getRouteFile, generateRoutes, loadRoutes } from "./routing/routing.js";
-
-// -----------------------------------------
-
-import { pathToFileURL } from "node:url";
-import { resolve } from "node:path";
-
-// -----------------------------------------
-
-// routes project * yapapa
-const projectRoot = process.cwd();
-const yapapaRoot = resolve(import.meta.dirname || ".", "..");
-const config = await import(pathToFileURL(resolve(projectRoot, "yapapa.config.ts")).href);
-const runtime = config.default.runtime;
-
-// -----------------------------------------
+import { renderYapapaFile } from "../../render/render.js";
+import { getRouteFile, generateRoutes, loadRoutes } from "../../routing/routing.js";
+import { projectRoot, yapapaRoot, config, runtime } from "../../exporter.js";
 
 // generate routes + load routes
 await generateRoutes();
@@ -67,10 +52,9 @@ const fetch = async (request: any) => {
   }
 
   const html = await renderYapapaFile(path, request, params);
-  const finalHtml = await layoutWrapper(html);
 
   if (fileExists) {
-    return new Response(finalHtml, {
+    return new Response(html, {
       headers: {
         "Content-Type": "text/html",
       },

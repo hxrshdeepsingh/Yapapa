@@ -6,6 +6,10 @@ import type { Runtime } from "../../types/runtime";
 export const NodeRuntime: Runtime = {
     name: "node",
 
+    cwd() {
+        return process.cwd();
+    },
+
     async readFile(path: string): Promise<string> {
         return readFile(path, "utf-8");
     },

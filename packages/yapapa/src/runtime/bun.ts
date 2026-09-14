@@ -4,6 +4,10 @@ import { bunHandler } from "./handler/bunHandler.js";
 export const BunRuntime: Runtime = {
   name: "bun",
 
+  cwd() {
+    return process.cwd();
+  },
+
   async readFile(path: string): Promise<string> {
     return Bun.file(path).text();
   },

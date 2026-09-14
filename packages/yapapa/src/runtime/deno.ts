@@ -4,6 +4,10 @@ import { denoHandler } from "./handler/denoHandler.js";
 export const DenoRuntime: Runtime = {
   name: "deno",
 
+  cwd() {
+    return Deno.cwd();
+  },
+
   async readFile(path: string): Promise<string> {
     return await Deno.readTextFile(path);
   },

@@ -1,7 +1,6 @@
 import { glob } from "tinyglobby";
 import { match } from "path-to-regexp";
-import { runtime } from "../server.js";
-
+import { runtime } from "../exporter"
 let routes: any;
 const pattern = /\[\s*(.*?)\s*\]/;
 

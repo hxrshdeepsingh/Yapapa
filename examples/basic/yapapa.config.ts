@@ -1,6 +1,4 @@
-import { NodeRuntime } from "yapapa";
-
 export default {
-  runtime: NodeRuntime,
+  runtime: "node",
   port: 3002,
 };
