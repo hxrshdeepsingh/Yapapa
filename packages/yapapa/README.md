@@ -1,5 +1,6 @@
-# Yapapa
+**Yapapa** is an HTML-first, server-rendered full-stack framework for building fast web applications with minimal client-side JavaScript.
 
-**yapapa** is a simple framework for building web applications.
+> **HTML first. JavaScript when it matters.**
 
-* Stay tuned for stable releases :)
+🚧 Yapapa is currently under active development.
+*Stay tuned for stable releases :)*

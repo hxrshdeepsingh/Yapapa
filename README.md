@@ -1,6 +1,6 @@
-# Welcome to yapapa
+![Yapapa](./docs/assets/icon.png)
 
-**yapapa** is a simple framework for building web applications.
+**Yapapa** is an HTML-first, server-rendered full-stack framework for building fast web applications with minimal client-side JavaScript.
 
 This repository contains the source code for the yapapa framework. It is structured as a **monorepo** and managed using **pnpm**.
 
