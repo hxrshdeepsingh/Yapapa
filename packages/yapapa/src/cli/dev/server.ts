@@ -1,6 +1,6 @@
-import { renderYapapaFile } from "../../render/render.js";
-import { getRouteFile, generateRoutes, loadRoutes } from "../../routing/routing.js";
-import { projectRoot, yapapaRoot, config, runtime } from "../../exporter.js";
+import { renderYapapaFile } from "../../render/render";
+import { getRouteFile, generateRoutes, loadRoutes } from "../../routing/routing";
+import { projectRoot, yapapaRoot, config, runtime } from "../../exporter";
 
 // generate routes + load routes
 await generateRoutes();
@@ -66,7 +66,5 @@ const fetch = async (request: any) => {
   });
 };
 
-export { runtime };
-
-config.default.runtime.listen(config.default.port, fetch);
+runtime.listen(config.default.port, fetch);
 console.log(`Yapapa running at http://localhost:${config.default.port}`);

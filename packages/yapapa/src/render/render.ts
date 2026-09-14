@@ -1,5 +1,5 @@
-import { runtime } from "../cli/dev/server.js";
-import { layoutWrapper } from "../template/layout.js";
+import { runtime } from "../exporter";
+import { layoutWrapper } from "../template/layout";
 
 // execute server code
 export async function executeServerCode(code: string, request: Request, params: any): Promise<Record<string, unknown>> {
