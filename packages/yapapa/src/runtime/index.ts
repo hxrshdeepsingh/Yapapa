@@ -1,13 +1,13 @@
 import { BunRuntime } from "./bun";
 import { NodeRuntime } from "./node";
 
-export const runtimes: any = {
+const runtimes = {
     bun: BunRuntime,
     node: NodeRuntime
-}
+} as const;
 
-export function getRuntime(name: string) {
-    const runtime = runtimes[name as keyof typeof runtimes];
+export function getRuntime(name: keyof typeof runtimes) {
+    const runtime = runtimes[name];
 
     if (!runtime) {
         throw new Error(`Unknown runtime: ${name}`);

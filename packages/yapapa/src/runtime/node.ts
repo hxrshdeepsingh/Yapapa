@@ -32,6 +32,10 @@ export const NodeRuntime: Runtime = {
         return import(path);
     },
 
+    resolveModule(specifier: string): URL {
+        return new URL(import.meta.resolve(specifier));
+    },
+
     listen(port: number, handler: (request: Request) => Promise<Response>) {
         return nodeHandler(port, handler);
     }

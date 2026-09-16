@@ -1,4 +1,8 @@
-import { runtime } from "../exporter";
+
+import { getGlobalContext } from "../globals";
+
+const { runtime } = getGlobalContext()
+
 import { layoutWrapper } from "../template/layout";
 
 // execute server code

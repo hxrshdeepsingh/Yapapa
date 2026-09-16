@@ -6,6 +6,7 @@ export interface Runtime {
     writeFile(path: string, data: string): Promise<void>;
     exists(path: string): Promise<boolean>;
     importModule(path: string): Promise<any>;
+    resolveModule(specifier: string): URL;
 
     listen(
         port: number,
