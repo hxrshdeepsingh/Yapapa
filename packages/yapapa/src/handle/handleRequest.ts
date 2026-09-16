@@ -1,4 +1,4 @@
-import { renderYapapaFile } from "../render/render";
+import { handlePageRendering } from "../render";
 import { getRouteFile } from "../routing/routing";
 
 export async function handleRequest(request: any, runtime: any) {
@@ -43,7 +43,7 @@ export async function handleRequest(request: any, runtime: any) {
         });
     }
 
-    const html = await renderYapapaFile(path, request, params);
+    const html = await handlePageRendering(path, request, params);
 
     if (fileExists) {
         return new Response(html, {

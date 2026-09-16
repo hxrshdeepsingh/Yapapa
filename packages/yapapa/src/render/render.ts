@@ -3,8 +3,6 @@ import { getGlobalContext } from "../globals";
 
 const { runtime } = getGlobalContext()
 
-import { layoutWrapper } from "../template/layout";
-
 // execute server code
 export async function executeServerCode(code: string, request: Request, params: any): Promise<Record<string, unknown>> {
   const AsyncFunction = Object.getPrototypeOf(async function () { }).constructor
@@ -51,6 +49,5 @@ export async function renderYapapaFile(
   const { serverCode, template } = parseYapapa(source);
   const context = await executeServerCode(serverCode, request, params);
   const childHtml = renderTemplate(template, context);
-  const html = await layoutWrapper(childHtml);
-  return html;
+  return childHtml;
 }
