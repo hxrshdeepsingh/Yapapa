@@ -22,5 +22,8 @@
             }
         ]
     },
-    "description": "Yapapa is a simple server-rendered web framework for JavaScript and TypeScript."
+    "description": "Yapapa is a simple server-rendered web framework for JavaScript and TypeScript.",
+    "background": {
+      "decoration": "gradient"
+    }
 }
