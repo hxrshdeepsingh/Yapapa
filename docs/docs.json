@@ -15,8 +15,9 @@
                 "group": "Documentation",
                 "pages": [
                     "index",
-                    "getting-started.mdx",
-                    "quickstart.mdx"
+                    "installation",
+                    "features",
+                    "quick-start"
                 ]
             }
         ]

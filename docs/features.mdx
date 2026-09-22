@@ -1,0 +1,127 @@
+---
+title: Features
+description: Yapapa focuses on keeping web development simple by putting rendering and application logic on the server.
+---
+
+## Server-side rendering
+
+Yapapa renders your pages on the server and sends the resulting HTML directly to the browser.
+
+```text
+Browser
+   │
+   │ Request
+   ▼
+Yapapa Server
+   │
+   │ Render
+   ▼
+HTML
+   │
+   ▼
+Browser
+```
+
+The browser does not need to run a framework to display the page.
+
+## `.yapapa` pages
+
+Yapapa uses `.yapapa` files for pages.
+
+A page can contain server-side JavaScript or TypeScript logic alongside your HTML:
+
+```html
+<server>
+  const name = "Yapapa"
+
+  return {
+    name
+  }
+</server>
+
+<h1>Hello {name}</h1>
+```
+
+This keeps the data-fetching and rendering logic close to the page that uses it.
+
+## Server code
+
+Use the `<server>` block to execute code on the server.
+
+You can fetch APIs, query data, calculate values, and prepare the data your page needs.
+
+```html
+<server>
+  const response = await fetch("/api/users")
+  const users = await response.json()
+
+  return {
+    users
+  }
+</server>
+```
+
+The result is available to the page during rendering.
+
+## Templating
+
+Yapapa provides simple template syntax for rendering server-side data into HTML.
+
+```html
+<h1>{title}</h1>
+<p>{description}</p>
+```
+
+You can also use conditional rendering and loops to build dynamic pages.
+
+## HTMX
+
+HTMX is a core part of the Yapapa philosophy.
+
+Instead of sending a large client-side application to the browser, you can use HTMX to make requests to the server and receive HTML responses.
+
+```text
+User interaction
+       ↓
+     HTMX
+       ↓
+   Yapapa server
+       ↓
+   Render HTML
+       ↓
+   HTML response
+       ↓
+      Page
+```
+
+This allows you to build interactive applications while keeping the browser-side code small.
+
+## Server-rendered components
+
+Yapapa supports server-rendered components that are rendered into HTML on the server.
+
+Components can be composed together to build larger pages without requiring a client-side component runtime.
+
+## No hydration
+
+Yapapa does not require hydration to make server-rendered pages interactive.
+
+The HTML sent by the server is already the rendered page.
+
+When interaction is needed, tools such as HTMX can communicate with the server and receive new HTML.
+
+## Runtime independent
+
+Yapapa is designed around a runtime abstraction so the framework core does not depend heavily on a single JavaScript runtime.
+
+Node.js and Bun are supported.
+
+## Plain HTML output
+
+The final output of a Yapapa page is HTML.
+
+That means the browser receives something it already understands:
+
+**HTML.**
+
+No framework-specific rendering runtime is required just to display the page.
