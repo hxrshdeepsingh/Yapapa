@@ -6,7 +6,7 @@ node_modules
 .env.*
 !.env.example
 
-/packages/yapapa/release.md
+RELEASE.md
 .yapapa
 
 # Build output
