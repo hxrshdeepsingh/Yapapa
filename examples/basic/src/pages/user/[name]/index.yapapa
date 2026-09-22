@@ -1,7 +1,22 @@
 <server>
-const { name } = params;
-return {name}
+  const { name } = params;
+  return { name };
 </server>
 
-<p>name is: {name}</p>
-<a href="/">Home</a>
+<main class="container">
+  <article>
+    <header>
+      <h1>Hello, {name} 👋</h1>
+    </header>
+
+    <p>
+      The name <strong>{name}</strong> was received from the route parameter.
+    </p>
+
+    <footer>
+      <a href="/" role="button">
+        ← Back to Home
+      </a>
+    </footer>
+  </article>
+</main>
