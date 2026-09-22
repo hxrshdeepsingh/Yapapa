@@ -30,5 +30,10 @@
       "ga4": {
         "measurementId": "G-X28XXT0DEL"
       }
+    },
+    "footer": {
+      "socials": {
+        "github": "https://github.com/hxrshdeepsingh/Yapapa"
+      }
     }
 }
