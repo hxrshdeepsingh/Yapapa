@@ -16,10 +16,12 @@ export async function createGlobalContext(runtimeType: any) {
     const projectRoot = runtime.cwd();
     const config = await runtime.importModule(`${projectRoot}/yapapa.config.ts`);
     const yapapaRoot = new URL("../", import.meta.url);
+    const glob = runtime.glob;
     return {
         projectRoot,
         runtime,
         config,
-        yapapaRoot
+        yapapaRoot,
+        glob
     };
 }

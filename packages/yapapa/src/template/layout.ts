@@ -2,7 +2,8 @@ import { getGlobalContext } from "../globals";
 
 const { runtime } = getGlobalContext()
 
-export async function layoutWrapper(html: string) {
+export async function layoutWrapper(text: string, html: string) {
     const layout = await runtime.readFile("./src/pages/layout.html");
-    return layout.replace("{{children}}", html);
+    return layout.replace(text, html);
+    // return layout.replace("{{children}}", html);
 }

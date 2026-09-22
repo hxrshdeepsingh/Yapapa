@@ -28,6 +28,21 @@ export const BunRuntime: Runtime = {
     return new URL(import.meta.resolve(specifier));
   },
 
+  async glob(
+    pattern: string,
+    options?: {
+      cwd?: string;
+    }
+  ): Promise<string[]> {
+    const glob = new Bun.Glob(pattern);
+
+    return Array.fromAsync(
+      glob.scan({
+        cwd: options?.cwd
+      })
+    );
+  },
+
   listen(port: number, handler: (request: Request) => Promise<Response>) {
     return bunHandler(port, handler);
   },

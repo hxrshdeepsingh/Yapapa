@@ -7,6 +7,9 @@ export interface Runtime {
     exists(path: string): Promise<boolean>;
     importModule(path: string): Promise<any>;
     resolveModule(specifier: string): URL;
+    glob(pattern: string, options?: {
+        cwd?: string
+    }): Promise<string[]>;
 
     listen(
         port: number,

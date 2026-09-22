@@ -3,30 +3,6 @@ import { getRouteFile } from "../routing/routing";
 
 export async function handleRequest(request: any, runtime: any) {
     const url = new URL(request.url);
-    const htmxPath = runtime.resolveModule("htmx.org/dist/htmx.min.js");
-    const alpinePath = runtime.resolveModule("alpinejs/dist/cdn.min.js");
-
-    if (url.pathname === "/htmx.js") {
-        return new Response(
-
-            await runtime.readFile(htmxPath),
-            {
-                headers: {
-                    "Content-Type": "application/javascript",
-                },
-            },
-        );
-    }
-    if (url.pathname === "/alpine.js") {
-        return new Response(
-            await runtime.readFile(alpinePath),
-            {
-                headers: {
-                    "Content-Type": "application/javascript",
-                },
-            },
-        );
-    }
     if (
         url.pathname === "/favicon.ico" ||
         url.pathname.startsWith("/.well-known/")

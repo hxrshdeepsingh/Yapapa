@@ -1,5 +1,6 @@
 import { readFile, writeFile, access, mkdir } from "node:fs/promises";
 import { dirname } from "node:path";
+import { glob } from "node:fs/promises";
 import { nodeHandler } from "./handler/nodeHandler";
 import type { Runtime } from "../../types/runtime";
 
@@ -34,6 +35,19 @@ export const NodeRuntime: Runtime = {
 
     resolveModule(specifier: string): URL {
         return new URL(import.meta.resolve(specifier));
+    },
+
+    async glob(
+        pattern: string,
+        options?: {
+            cwd?: string;
+        }
+    ): Promise<string[]> {
+        return Array.fromAsync(
+            glob(pattern, {
+                cwd: options?.cwd
+            })
+        );
     },
 
     listen(port: number, handler: (request: Request) => Promise<Response>) {

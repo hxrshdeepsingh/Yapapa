@@ -1,8 +1,7 @@
-import { glob } from "tinyglobby";
 import { match } from "path-to-regexp";
 import { getGlobalContext } from "../globals";
 
-const { runtime } = getGlobalContext();
+const { runtime, glob } = getGlobalContext();
 
 let routes: any;
 const pattern = /\[\s*(.*?)\s*\]/;
