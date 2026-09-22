@@ -1,7 +1,7 @@
 import { handlePageRendering } from "../render";
 import { getRouteFile } from "../routing/routing";
 
-export async function handleRequest(request: any, runtime: any) {
+export async function handleRequest(request: any, runtime: any): Promise<Response> {
     const url = new URL(request.url);
     if (
         url.pathname === "/favicon.ico" ||
