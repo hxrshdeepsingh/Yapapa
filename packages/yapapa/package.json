@@ -1,6 +1,6 @@
 {
   "name": "yapapa",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "Yapapa an HTML-first full-stack framework for building fast, server-rendered web applications with minimal client-side JavaScript",
   "keywords": [
