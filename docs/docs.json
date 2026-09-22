@@ -25,5 +25,10 @@
     "description": "Yapapa is a simple server-rendered web framework for JavaScript and TypeScript.",
     "background": {
       "decoration": "gradient"
+    },
+    "integrations": {
+      "ga4": {
+        "measurementId": "G-X28XXT0DEL"
+      }
     }
 }
